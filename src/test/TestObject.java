@@ -1,6 +1,7 @@
-package base;
+package test;
 
 import java.util.Date;
+import base.*;
 
 public class TestObject {
 	public static void main(String[] args){

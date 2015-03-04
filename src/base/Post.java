@@ -29,7 +29,7 @@ public class Post {
 	
 	@Override
 	public String toString(){
-		return getDate().toString() + "\n" + getContent();
+		return date.toString() + "\n" + content;
 	}
 	
 	@Override
@@ -40,15 +40,15 @@ public class Post {
 			return false;
 		
 		Post obj = (Post) o;
-		return (getDate() == obj.getDate() && getContent() == obj.getContent());
+		return (date.equals(obj.date) && content.equals(obj.content));
 	}
 	
 	@Override
 	public int hashCode(){
 		final int prime = 23;
 		int hashCode = 1;
-		hashCode = prime * hashCode + ((getDate() == null)?0:getDate().hashCode());
-		hashCode = prime * hashCode + ((getContent() == null)?0:getContent().hashCode());
+		hashCode = prime * hashCode + ((date == null)?0:date.hashCode());
+		hashCode = prime * hashCode + ((content == null)?0:content.hashCode());
 		return hashCode;
 	}
 	
@@ -58,6 +58,6 @@ public class Post {
 	 * @return boolean
 	 */
 	public boolean contains(String keyword){
-		return getContent().contains(keyword);
+		return content.contains(keyword);
 	}
 }

@@ -38,9 +38,9 @@ public class User {
 	@Override
 	public String toString(){
 		String info = "User [";
-		info += "userId:" + getUserId();
-		info += ", userName=" + getUserName();
-		info += ", userEmail=" + getUserEmail();
+		info += "userId:" + userId;
+		info += ", userName=" + userName;
+		info += ", userEmail=" + userEmail;
 		info += "]";
 		return info;
 	}
@@ -53,16 +53,16 @@ public class User {
 			return false;
 		
 		User obj = (User) o;
-		return (getUserId() == obj.getUserId() && getUserName() == obj.getUserName() && getUserEmail() == obj.getUserEmail());
+		return (userId == obj.userId && userName.equals(obj.userName) && userEmail.equals(obj.userEmail));
 	}
 	
 	@Override
 	public int hashCode(){
 		final int prime = 17;
 		int hashCode = 1;
-		hashCode = prime * hashCode + getUserId();
-		hashCode = prime * hashCode + ((getUserName() == null)?0:getUserName().hashCode());
-		hashCode = prime * hashCode + ((getUserEmail() == null)?0:getUserEmail().hashCode());
+		hashCode = prime * hashCode + userId;
+		hashCode = prime * hashCode + ((userName == null)?0:userName.hashCode());
+		hashCode = prime * hashCode + ((userEmail == null)?0:userEmail.hashCode());
 		return hashCode;
 	}
 }

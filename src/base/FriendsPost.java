@@ -20,7 +20,7 @@ public class FriendsPost extends Post{
 
 	@Override
 	public String toString(){
-		return getFriend().toString() + '\n' + super.toString();
+		return friend.toString() + '\n' + super.toString();
 	}
 	
 	@Override
@@ -30,7 +30,7 @@ public class FriendsPost extends Post{
 		if( o == null || o.getClass() != this.getClass() || !super.equals(o))
 			return false;
 		FriendsPost obj = (FriendsPost) o;
-		return (getFriend().equals(obj.getFriend())&&super.equals((Post)o));
+		return (friend.equals(obj.friend)&&super.equals((Post)o));
 	}
 	
 	@Override
@@ -38,7 +38,7 @@ public class FriendsPost extends Post{
 		final int prime = 19;
 		int hashCode = 1;
 		hashCode = prime * hashCode + super.hashCode();
-		hashCode = prime * hashCode + ((getFriend() == null)?0:getFriend().hashCode());
+		hashCode = prime * hashCode + ((friend == null)?0:friend.hashCode());
 		return hashCode;
 	}
 }
