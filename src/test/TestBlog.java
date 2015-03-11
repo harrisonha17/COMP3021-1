@@ -29,16 +29,24 @@ public class TestBlog {
 			if(prompt.startsWith("list")){
 				myblog.list();
 			}
-			else if(prompt.startsWith("post")){
+			else if(prompt.startsWith("post ")){
 				Date date = new Date();
 				String content = prompt.substring(5);
 				
 				Post post = new Post(date,content);
 				myblog.post(post);
 			}
-			else if(prompt.startsWith("delete")){
+			else if(prompt.startsWith("delete ")){
 				int index = Integer.parseInt(prompt.substring(7));
 				myblog.delete((index-1));
+			}
+			else if (prompt.equals("help")){
+				System.out.println("\"list\" : list all posts in blog.");
+				System.out.println("\"post \" + content: post a new post.");
+				System.out.println("\"delete \" + index: delete the post having index.");
+			}
+			else{
+				System.out.println("Illegal command. Try \"help\" for help.");
 			}
 		}
 	}

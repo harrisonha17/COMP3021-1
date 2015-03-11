@@ -1,6 +1,6 @@
 package base;
 
-public class User {
+public class User implements Comparable<User>{
 	private int userId;
 	private String userName;
 	private String userEmail;
@@ -64,5 +64,10 @@ public class User {
 		hashCode = prime * hashCode + ((userName == null)?0:userName.hashCode());
 		hashCode = prime * hashCode + ((userEmail == null)?0:userEmail.hashCode());
 		return hashCode;
+	}
+	
+	@Override
+	public int compareTo(User u){
+		return (this.userId > u.userId)?1:((this.userId==u.userId)?0:-1);
 	}
 }

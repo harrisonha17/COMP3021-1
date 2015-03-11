@@ -3,6 +3,7 @@ package blog;
 import base.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Blog {
 	private User user;
@@ -99,5 +100,16 @@ public class Blog {
 		hashCode = prime * hashCode + user.hashCode();
 		hashCode = prime * hashCode + allPosts.hashCode();
 		return hashCode;
+	}
+	
+	public void search(int month, String someone){
+		Calendar cal = Calendar.getInstance();
+		for(Post p : allPosts){
+			cal.setTime(p.getDate());
+			int postMonth = cal.get(Calendar.MONTH);
+			
+			if( postMonth == month-1 && p.getContent().contains(someone))
+				System.out.println(p);
+		}
 	}
 }
